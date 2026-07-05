@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quince Años · Juanita Mejía</title>
+  <meta name="description" content="Estás invitado a los quince años de Juanita Mejía · 24 de julio de 2026 · Villa Teo" />
+
+  <!-- Open Graph: vista previa bonita al compartir por WhatsApp -->
+  <meta property="og:title" content="Quince Años · Juanita Mejía" />
+  <meta property="og:description" content="Este es el comienzo de una noche que llevaré en el corazón para siempre... 24 de julio de 2026." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="imagenes/juanita-gala.jpg" />
+
+  <link rel="stylesheet" href="fonts/fonts.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%9C%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- ============ PORTADA / SOBRE ============ -->
+  <header class="hero" id="inicio">
+    <div class="hero__bg" aria-hidden="true"></div>
+
+    <p class="hero__intro">Este es el comienzo de una noche que<br>llevaré en el corazón para siempre...</p>
+
+    <div class="envelope">
+      <div class="card">
+        <p class="card__eyebrow">Mis</p>
+        <h1 class="card__name">Juanita<br>Mejía</h1>
+        <p class="card__sub">Quince Años</p>
+        <span class="card__divider" aria-hidden="true"></span>
+        <p class="card__date">24 de Julio · 2026</p>
+      </div>
+      <div class="envelope__pocket" aria-hidden="true"></div>
+      <div class="wax-seal" aria-hidden="true"><span class="wax-seal__heart">♥</span></div>
+      <figure class="polaroid">
+        <div class="polaroid__tape" aria-hidden="true"></div>
+        <img class="polaroid__photo" src="imagenes/juanita-polaroid.jpg" alt="Juanita con vestido lila" loading="eager" />
+      </figure>
+    </div>
+
+    <a class="scroll-cue" href="#invitado" aria-label="Desplázate para ver más"><span></span></a>
+  </header>
+
+  <!-- ============ INVITADO PERSONALIZADO ============ -->
+  <section class="guest" id="invitado">
+    <div class="guest__photo"><img src="imagenes/juanita-retrato.jpg" alt="Retrato de Juanita" loading="lazy" /></div>
+    <div class="guest__text">
+      <p class="guest__label">Con todo mi cariño, invito a</p>
+      <h2 class="guest__name" id="guestName">nuestros invitados especiales</h2>
+      <p class="guest__note">a acompañarme en una noche mágica e inolvidable ✨</p>
+    </div>
+  </section>
+
+  <!-- ============ LA FIESTA ============ -->
+  <section class="party" id="fiesta">
+    <div class="party__photos" aria-hidden="true">
+      <figure class="filmneg"><img src="imagenes/juanita-miss15.jpg" alt="" loading="lazy" /><span>MISS 15</span></figure>
+      <figure class="filmneg"><img src="imagenes/juanita-15velas.jpg" alt="" loading="lazy" /><span>15</span></figure>
+    </div>
+
+    <div class="paper">
+      <div class="paper__clip" aria-hidden="true"></div>
+      <p class="party__eyebrow">¡Llegó el gran día!</p>
+      <h2 class="party__title">La Fiesta</h2>
+      <div class="party__doodle" aria-hidden="true">✦&nbsp; ⚘ &nbsp;✦</div>
+
+      <dl class="details">
+        <div class="details__row"><dt>Fecha</dt><dd>Viernes 24 de julio</dd></div>
+        <div class="details__row"><dt>Hora</dt><dd>7:30 pm a 3:00 am</dd></div>
+        <div class="details__row"><dt>Lugar</dt><dd>Centro de Eventos &amp; Espectáculos<br><strong>Villa Teo</strong></dd></div>
+      </dl>
+
+      <a class="btn btn--sage" id="mapsBtn" href="#" target="_blank" rel="noopener">Ver ubicación en el mapa</a>
+    </div>
+  </section>
+
+  <!-- ============ CUENTA REGRESIVA ============ -->
+  <section class="countdown" id="cuenta">
+    <div class="countdown__bg" aria-hidden="true"></div>
+    <div class="countdown__inner">
+      <h2 class="section-title">Faltan</h2>
+      <div class="countdown__grid" id="countdown">
+        <div class="cd"><span class="cd__num" data-cd="dias">--</span><span class="cd__label">días</span></div>
+        <div class="cd"><span class="cd__num" data-cd="horas">--</span><span class="cd__label">horas</span></div>
+        <div class="cd"><span class="cd__num" data-cd="minutos">--</span><span class="cd__label">min</span></div>
+        <div class="cd"><span class="cd__num" data-cd="segundos">--</span><span class="cd__label">seg</span></div>
+      </div>
+      <p class="countdown__msg" id="countdownMsg"></p>
+    </div>
+  </section>
+
+  <!-- ============ LA GRAN NOCHE / DRESSCODE ============ -->
+  <section class="night" id="noche">
+    <div class="night__photo"><img src="imagenes/juanita-gala.jpg" alt="Juanita en vestido de gala" loading="lazy" /></div>
+    <div class="paper paper--tall">
+      <div class="paper__tape" aria-hidden="true"></div>
+      <h2 class="night__title">La Gran Noche</h2>
+      <p class="night__intro">¡Tendremos una noche mágica!<br>Les dejamos algunos detalles a tener en cuenta.</p>
+
+      <h3 class="night__sub">Dresscode</h3>
+      <p class="dresscode"><strong>Caballeros:</strong> smoking o traje oscuro</p>
+      <p class="dresscode"><strong>Damas:</strong> vestido largo o de gala</p>
+
+      <div class="night__doodle" aria-hidden="true">✿</div>
+
+      <p class="night__gift">Tu presencia es lo más importante, pero si deseas obsequiarme algo, <strong>una lluvia de sobres</strong> será muy bien recibida 💌</p>
+    </div>
+  </section>
+
+  <!-- ============ CONFIRMACIÓN / RSVP ============ -->
+  <section class="rsvp" id="confirmar">
+    <div class="paper">
+      <p class="rsvp__eyebrow">Tu respuesta es muy importante</p>
+      <h2 class="rsvp__title">Confirma tu asistencia</h2>
+      <p class="rsvp__deadline" id="rsvpDeadline"></p>
+
+      <form id="rsvpForm" class="form" novalidate>
+        <label class="field">
+          <span class="field__label">Nombre completo</span>
+          <input type="text" data-field="nombre" id="fNombre" required placeholder="Tu nombre" autocomplete="name" />
+        </label>
+
+        <fieldset class="field">
+          <span class="field__label">¿Nos acompañas?</span>
+          <div class="choices">
+            <label class="choice">
+              <input type="radio" name="asistencia" value="Sí, allí estaré" data-field="asistencia" required />
+              <span>¡Sí, allí estaré! 🎉</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="asistencia" value="No podré asistir" data-field="asistencia" />
+              <span>No podré asistir 💛</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <label class="field" id="guestsField">
+          <span class="field__label">¿Cuántas personas asistirán? (incluyéndote)</span>
+          <input type="number" data-field="acompanantes" id="fAcompanantes" min="1" max="20" step="1" value="1" inputmode="numeric" />
+        </label>
+
+        <label class="field">
+          <span class="field__label">Un mensaje para Juanita <em>(opcional)</em></span>
+          <textarea data-field="mensaje" id="fMensaje" rows="3" placeholder="Escríbele algo lindo..."></textarea>
+        </label>
+
+        <button type="submit" class="btn btn--lavender" id="rsvpSubmit">Enviar confirmación</button>
+        <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <!-- iframe oculto que recibe el POST del Google Form -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none" title="rsvp"></iframe>
+  </section>
+
+  <!-- ============ CIERRE ============ -->
+  <footer class="closing">
+    <p class="closing__script">Te espero</p>
+    <p class="closing__name">Juanita Mejía</p>
+    <p class="closing__meta">24 de julio de 2026 · Villa Teo</p>
+    <div class="closing__hearts" aria-hidden="true">♥</div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
