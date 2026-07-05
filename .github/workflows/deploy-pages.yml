@@ -1,0 +1,41 @@
+name: Desplegar invitación en GitHub Pages
+
+on:
+  push:
+    branches:
+      - "claude/quinceañera-invitation-site-v392tk"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Un solo despliegue a la vez
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener el código
+        uses: actions/checkout@v4
+
+      - name: Configurar Pages (se auto-activa)
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Empaquetar el sitio
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+
+      - name: Publicar en Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
