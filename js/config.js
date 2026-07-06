@@ -38,15 +38,14 @@ window.CONFIG = {
      mensaje de gracias pero NO guardará datos.
      ============================================================ */
   googleForm: {
-    // 1) Pega la URL "formResponse" de tu formulario:
-    //    https://docs.google.com/forms/d/e/FORM_ID/formResponse
-    actionUrl: "",
+    // URL "formResponse" del formulario de Juanita:
+    actionUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdOXGAfw7RsCrPxdUYSJF5LqW0Np7ZavAcFhUJIo35-f67p2Q/formResponse",
 
-    // 2) Empareja cada campo con su "entry.XXXXXXXXX" del formulario:
+    // Cada campo emparejado con su "entry.XXXXXXXXX":
     entries: {
-      nombre:     "entry.0000000001",
-      asistencia: "entry.0000000002",
-      mensaje:    "entry.0000000003"
+      nombre:     "entry.678883266",
+      asistencia: "entry.1746048726",
+      mensaje:    "entry.311310354"
     }
   }
 };
