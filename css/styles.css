@@ -588,6 +588,15 @@ body.intro-open { overflow: hidden; }
 }
 .dresscode { font-family: var(--font-display); font-size: 1.2rem; }
 .dresscode strong { color: var(--lav-900); }
+.dresscode--reserva {
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--sage-700);
+  max-width: 26ch;
+  margin: .8rem auto 0;
+  line-height: 1.45;
+}
+.dresscode--reserva strong { color: var(--lav-700); font-style: normal; }
 .night__doodle { color: var(--sage-500); font-size: 2rem; margin: 1.4rem 0; }
 .night__gift {
   font-family: var(--font-display);
