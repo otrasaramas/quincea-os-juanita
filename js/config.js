@@ -18,7 +18,7 @@ window.CONFIG = {
      Suena cuando el invitado toca el botón (o al primer toque en la
      pantalla). Si el archivo no existe, el botón se oculta solo.       */
   musica: {
-    enabled: false,         // desactivada (ponla en true si algún día quieres música)
+    enabled: true,          // el botón aparece solo cuando exista musica/cancion.mp3
     archivo: "musica/cancion.mp3",
     volumen: 0.6            // de 0 (silencio) a 1 (máximo)
   },
