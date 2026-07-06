@@ -128,7 +128,7 @@ section { position: relative; }
   letter-spacing: .12em;
   color: var(--sage-700);
   font-size: 1.05rem;
-  margin-bottom: .2rem;
+  margin-bottom: .9rem;
 }
 .card__name {
   font-family: var(--font-script);
