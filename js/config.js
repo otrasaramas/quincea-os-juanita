@@ -13,6 +13,16 @@ window.CONFIG = {
   /* --- Fecha límite para confirmar (texto libre) --- */
   confirmarAntesDe: "12 de julio de 2026",
 
+  /* --- Música de fondo ---
+     Sube tu canción a la carpeta "musica/" y pon aquí el nombre.
+     Suena cuando el invitado toca el botón (o al primer toque en la
+     pantalla). Si el archivo no existe, el botón se oculta solo.       */
+  musica: {
+    enabled: true,
+    archivo: "musica/cancion.mp3",
+    volumen: 0.6            // de 0 (silencio) a 1 (máximo)
+  },
+
   /* --- Ubicación (botón "Ver en el mapa") ---
      Pega aquí el enlace de Google Maps del lugar. Si lo dejas
      vacío, se buscará el nombre del lugar automáticamente.        */
@@ -34,10 +44,9 @@ window.CONFIG = {
 
     // 2) Empareja cada campo con su "entry.XXXXXXXXX" del formulario:
     entries: {
-      nombre:       "entry.0000000001",
-      asistencia:   "entry.0000000002",
-      acompanantes: "entry.0000000003",
-      mensaje:      "entry.0000000004"
+      nombre:     "entry.0000000001",
+      asistencia: "entry.0000000002",
+      mensaje:    "entry.0000000003"
     }
   }
 };

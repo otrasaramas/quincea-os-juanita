@@ -66,18 +66,6 @@
   var timer;
   if (target) { tick(); timer = setInterval(tick, 1000); }
 
-  /* ---------- 5. Mostrar/ocultar nº de acompañantes ---------- */
-  var guestsField = document.getElementById("guestsField");
-  document.querySelectorAll('input[name="asistencia"]').forEach(function (r) {
-    r.addEventListener("change", function () {
-      var attending = document.querySelector('input[name="asistencia"]:checked');
-      if (guestsField) {
-        guestsField.style.display =
-          (attending && attending.value.indexOf("Sí") === 0) ? "" : "none";
-      }
-    });
-  });
-
   /* ---------- 6. Envío del formulario a Google Forms ---------- */
   var form = document.getElementById("rsvpForm");
   var statusEl = document.getElementById("formStatus");
@@ -107,9 +95,6 @@
       var data = {
         nombre: nombre.trim(),
         asistencia: asiste.value,
-        acompanantes: asiste.value.indexOf("Sí") === 0
-          ? ((document.getElementById("fAcompanantes") || {}).value || "1")
-          : "0",
         mensaje: (document.getElementById("fMensaje") || {}).value || ""
       };
 
@@ -164,7 +149,49 @@
     });
   }
 
-  /* ---------- 7. Animación de aparición al hacer scroll ---------- */
+  /* ---------- 7. Música de fondo ---------- */
+  (function () {
+    var audio = document.getElementById("bgMusic");
+    var toggle = document.getElementById("musicToggle");
+    if (!audio || !toggle) return;
+
+    var cfg = CFG.musica || {};
+    if (cfg.enabled === false) return;              // el botón ya está oculto por CSS
+    if (cfg.archivo) {
+      var src = audio.querySelector("source");
+      if (src) { src.src = cfg.archivo; audio.load(); }
+    }
+    if (typeof cfg.volumen === "number") audio.volume = cfg.volumen;
+
+    // El botón solo aparece cuando la canción existe y se puede cargar.
+    audio.addEventListener("loadedmetadata", function () { toggle.classList.add("is-ready"); });
+    audio.addEventListener("error", function () { toggle.classList.remove("is-ready"); });
+
+    function setState(playing) {
+      toggle.classList.toggle("is-playing", playing);
+      toggle.setAttribute("aria-pressed", playing ? "true" : "false");
+      toggle.setAttribute("aria-label", playing ? "Pausar música" : "Reproducir música");
+    }
+    function tryPlay() { audio.play().then(function () { setState(true); }).catch(function () {}); }
+
+    toggle.addEventListener("click", function () {
+      if (audio.paused) tryPlay();
+      else { audio.pause(); setState(false); }
+    });
+
+    // Intentar reproducir tras el primer gesto del invitado (los navegadores
+    // bloquean el autoplay con sonido hasta que la persona interactúa).
+    var started = false;
+    function firstGesture() {
+      if (started) return; started = true;
+      tryPlay();
+    }
+    ["pointerdown", "touchstart", "keydown", "scroll"].forEach(function (ev) {
+      window.addEventListener(ev, firstGesture, { once: true, passive: true });
+    });
+  })();
+
+  /* ---------- 8. Animación de aparición al hacer scroll ---------- */
   var revealSelectors = [
     ".guest__photo", ".guest__text", ".party__photos", ".party .paper",
     ".countdown__inner", ".night__photo", ".night .paper", ".rsvp .paper", ".closing"

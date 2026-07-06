@@ -613,6 +613,46 @@ section { position: relative; }
 }
 .closing__hearts { color: var(--lav-400); font-size: 1.6rem; margin-top: 1.4rem; letter-spacing: .4rem; }
 
+/* ============ BOTÓN DE MÚSICA ============ */
+.music-toggle {
+  position: fixed;
+  right: 16px; bottom: 16px;
+  z-index: 50;
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--lav-500), var(--lav-400));
+  box-shadow: 0 10px 24px -8px var(--lav-700);
+  display: none;                 /* oculto hasta que exista la canción */
+  place-items: center;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.music-toggle.is-ready { display: grid; }
+.music-toggle:hover { transform: translateY(-2px); }
+.music-toggle:focus-visible { outline: 3px solid var(--lav-200); outline-offset: 3px; }
+
+.music-toggle__bars { display: flex; align-items: flex-end; gap: 3px; height: 20px; }
+.music-toggle__bars i {
+  width: 3px; height: 6px;
+  border-radius: 2px;
+  background: #fff;
+}
+/* En pausa: muestra un ícono de "play" estático (barras bajas y parejas) */
+.music-toggle__bars i:nth-child(1) { height: 8px; }
+.music-toggle__bars i:nth-child(2) { height: 14px; }
+.music-toggle__bars i:nth-child(3) { height: 10px; }
+.music-toggle__bars i:nth-child(4) { height: 6px; }
+/* Sonando: barras animadas tipo ecualizador */
+.music-toggle.is-playing .music-toggle__bars i { animation: eq .9s ease-in-out infinite; }
+.music-toggle.is-playing .music-toggle__bars i:nth-child(2) { animation-delay: .2s; }
+.music-toggle.is-playing .music-toggle__bars i:nth-child(3) { animation-delay: .4s; }
+.music-toggle.is-playing .music-toggle__bars i:nth-child(4) { animation-delay: .1s; }
+@keyframes eq { 0%,100%{ height:5px } 50%{ height:20px } }
+@media (prefers-reduced-motion: reduce) {
+  .music-toggle.is-playing .music-toggle__bars i { animation: none; }
+}
+
 /* ============ DESKTOP ============ */
 @media (min-width: 760px) {
   .guest { flex-direction: row; justify-content: center; gap: 3rem; text-align: left; max-width: 900px; margin: 0 auto; }

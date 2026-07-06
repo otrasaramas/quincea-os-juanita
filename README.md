@@ -41,11 +41,10 @@ NO guarda los datos.**
 
 ### Paso 1 — Crear el formulario
 1. Entra a [forms.google.com](https://forms.google.com) y crea un formulario nuevo.
-2. Agrega **4 preguntas** (de tipo *respuesta corta* o *párrafo*), en este orden:
+2. Agrega **3 preguntas** (de tipo *respuesta corta* o *párrafo*), en este orden:
    1. `Nombre`
    2. `Asistencia`
-   3. `Acompañantes`
-   4. `Mensaje`
+   3. `Mensaje`
 3. En la pestaña **Respuestas**, pulsa el ícono de Sheets para **vincular una hoja
    de cálculo** (ahí llegarán las confirmaciones).
 
@@ -71,10 +70,9 @@ tus preguntas. Cópialos a `js/config.js`:
 googleForm: {
   actionUrl: "https://docs.google.com/forms/d/e/XXXX/formResponse",
   entries: {
-    nombre:       "entry.1111",
-    asistencia:   "entry.2222",
-    acompanantes: "entry.3333",
-    mensaje:      "entry.4444"
+    nombre:     "entry.1111",
+    asistencia: "entry.2222",
+    mensaje:    "entry.3333"
   }
 }
 ```
@@ -90,6 +88,8 @@ googleForm: {
 - **Ubicación / mapa:** pega el enlace de Google Maps en `ubicacion.mapsUrl`.
 - **Fecha límite para confirmar:** cámbiala en `confirmarAntesDe`.
 - **Cuenta regresiva:** la fecha del evento está en `evento.fecha`.
+- **Música de fondo:** sube tu canción a `musica/cancion.mp3` (ver
+  `musica/README.md`). El botón flotante aparece solo si el archivo existe.
 
 ---
 

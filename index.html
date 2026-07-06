@@ -106,7 +106,7 @@
 
       <div class="night__doodle" aria-hidden="true">✿</div>
 
-      <p class="night__gift">Tu presencia es lo más importante, pero si deseas obsequiarme algo, <strong>una lluvia de sobres</strong> será muy bien recibida 💌</p>
+      <p class="night__gift"><strong>Lluvia de sobres</strong> 💌</p>
     </div>
   </section>
 
@@ -137,11 +137,6 @@
           </div>
         </fieldset>
 
-        <label class="field" id="guestsField">
-          <span class="field__label">¿Cuántas personas asistirán? (incluyéndote)</span>
-          <input type="number" data-field="acompanantes" id="fAcompanantes" min="1" max="20" step="1" value="1" inputmode="numeric" />
-        </label>
-
         <label class="field">
           <span class="field__label">Un mensaje para Juanita <em>(opcional)</em></span>
           <textarea data-field="mensaje" id="fMensaje" rows="3" placeholder="Escríbele algo lindo..."></textarea>
@@ -163,6 +158,14 @@
     <p class="closing__meta">24 de julio de 2026 · Villa Teo</p>
     <div class="closing__hearts" aria-hidden="true">♥</div>
   </footer>
+
+  <!-- Música de fondo -->
+  <audio id="bgMusic" loop preload="metadata">
+    <source src="musica/cancion.mp3" type="audio/mpeg" />
+  </audio>
+  <button id="musicToggle" class="music-toggle" type="button" aria-label="Reproducir música" aria-pressed="false">
+    <span class="music-toggle__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+  </button>
 
   <script src="js/config.js"></script>
   <script src="js/main.js"></script>
