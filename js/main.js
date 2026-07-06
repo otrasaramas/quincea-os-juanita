@@ -157,10 +157,7 @@
 
     var cfg = CFG.musica || {};
     if (cfg.enabled === false) return;              // el botón ya está oculto por CSS
-    if (cfg.archivo) {
-      var src = audio.querySelector("source");
-      if (src) { src.src = cfg.archivo; audio.load(); }
-    }
+    if (cfg.archivo) { audio.src = cfg.archivo; audio.load(); }
     if (typeof cfg.volumen === "number") audio.volume = cfg.volumen;
 
     // El botón solo aparece cuando la canción existe y se puede cargar.
