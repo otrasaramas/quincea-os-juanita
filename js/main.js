@@ -16,6 +16,8 @@
   if (guestName) {
     var elName = document.getElementById("guestName");
     if (elName) elName.textContent = guestName;
+    var elIntroGuest = document.getElementById("introGuest");
+    if (elIntroGuest) elIntroGuest.textContent = "Para: " + guestName;
     document.title = guestName + " · Quince Años de Juanita";
     // Precargar el nombre en el formulario
     var fNombre = document.getElementById("fNombre");
@@ -150,6 +152,7 @@
   }
 
   /* ---------- 7. Música de fondo ---------- */
+  var startMusic = function () {};                  // la portada de entrada la usa
   (function () {
     var audio = document.getElementById("bgMusic");
     var toggle = document.getElementById("musicToggle");
@@ -170,6 +173,7 @@
       toggle.setAttribute("aria-label", playing ? "Pausar música" : "Reproducir música");
     }
     function tryPlay() { audio.play().then(function () { setState(true); }).catch(function () {}); }
+    startMusic = tryPlay;                           // expuesta para la portada de entrada
 
     toggle.addEventListener("click", function () {
       if (audio.paused) tryPlay();
@@ -188,7 +192,25 @@
     });
   })();
 
-  /* ---------- 8. Animación de aparición al hacer scroll ---------- */
+  /* ---------- 8. Portada de entrada ("Toca para abrir") ---------- */
+  (function () {
+    var intro = document.getElementById("intro");
+    var btn = document.getElementById("introBtn");
+    if (!intro || !btn) return;
+
+    document.body.classList.add("intro-open");      // bloquea el scroll de fondo
+
+    function enter() {
+      startMusic();                                 // arranca la música (gesto del usuario)
+      intro.classList.add("is-hiding");
+      document.body.classList.remove("intro-open");
+      window.scrollTo(0, 0);
+      setTimeout(function () { intro.style.display = "none"; }, 850);
+    }
+    btn.addEventListener("click", enter);
+  })();
+
+  /* ---------- 9. Animación de aparición al hacer scroll ---------- */
   var revealSelectors = [
     ".guest__photo", ".guest__text", ".party__photos", ".party .paper",
     ".countdown__inner", ".night__photo", ".night .paper", ".rsvp .paper", ".closing"
