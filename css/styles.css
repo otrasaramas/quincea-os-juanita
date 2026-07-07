@@ -597,6 +597,7 @@ body.intro-open { overflow: hidden; }
   font-size: 1.05rem;
   margin-bottom: .7rem;
 }
+.dresscode--ref { margin-top: 1rem; font-size: 1.1rem; }
 .dresscode__btn { margin: .8rem 0 .4rem; }
 .dresscode--reserva {
   font-style: italic;
